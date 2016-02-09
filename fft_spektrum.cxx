@@ -33,7 +33,11 @@ int main(int argc, char** argv){
 	fftw_plan FW  = fftw_plan_dft_r2c_1d(N, inR, f, FFTW_ESTIMATE);
 
 	// Read input data
-
+	ifstream in(in_file);
+	for(int i = 0; i < N; i++){
+	  in >> L;
+	  in >> inR[i];
+	}
 	// Call function which reads the data from
 	// the input file into the array inR
 
